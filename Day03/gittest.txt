@@ -1,2 +1,2 @@
 I am testing git here.
-I am giving an example
+I am giving an example.
