@@ -2,9 +2,14 @@
 
 # print(math.pi)
 
-from math import *
-# print(pi)
-# print(factorial(6))
+# from math import *
+# # print(pi)
+# # print(factorial(6))
 
-print(ceil(7.8))
-print(floor(7.8))
+# print(ceil(7.8))
+# print(floor(7.8))
+
+s = "rahul"
+k = list(s)
+
+print(s)
