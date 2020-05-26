@@ -1,0 +1,15 @@
+internet --> It is a collection of networks.
+
+network --> It is a group or system of interconnected computers/mobiles.
+
+Internet --> It is basically a collection of collection of networks 
+
+CRUD 
+
+Create  --> Post
+
+Read    --> Get
+
+Update  --> Put
+
+Delete  --> Delete
