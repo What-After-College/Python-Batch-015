@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 # print(url_data)
 url_data = requests.get(recieved_data["cards"][0]["imageUrl"])
 with open('./poke.png','wb') as f:
-    for item in url_data.iter_content(1024):
+    for item in url_data.iter_content(4096):
         f.write(item)
 
 image_data = plt.imread('./poke.png')
