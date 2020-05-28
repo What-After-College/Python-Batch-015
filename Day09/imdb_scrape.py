@@ -29,14 +29,23 @@ def collect_movie_data(movie_id):
         "genre": page_json["genre"],
         "image": page_json["image"],
         "decription": page_json["description"]
+        
     }
     print(movie["name"])
     return movie
     
+def get_movies_paged(page=1, movie_per_page=10):
+    ids = get_movie_ids(num=movie_per_page, page=page)
+    scrape_result = {"movies":[]}
+    for id in ids:
+        scrape_result["movies"].append(collect_movie_data(id))
+
+    return scrape_result    
+    
 
 if __name__ == "__main__":
     ids = get_movie_ids(10)
-    print(ids)
+    # print(ids)
     for x in ids:
         collect_movie_data(x)
     
