@@ -6,7 +6,7 @@ import pandas as pd
 
 
 def get_movie_ids(num=30, page=1):
-    links_data = pd.read_csv("links.csv")
+    links_data = pd.read_csv("./scrape_imdb/links.csv")
     movie_ids = list(links_data.imdbId)
     start_index = (page - 1) * num
     end_index = start_index + num
@@ -34,7 +34,7 @@ def collect_movie_dict(movie_id):
     return movie
 
 
-def get_movies_paged(page=1, movies_per_page=5):
+def get_movies_paged(page=2, movies_per_page=10):
     ids = get_movie_ids(num=movies_per_page, page=page)
     scrape_result = {"movies": []}
     for id in ids:
