@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie page </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body>
+    <center>
+        <h1 style="color: aliceblue;">This is movie projects</h1>
+    </center>
+
+    <div class="container-fluid">
+        <div class="row">
+            {% for movie in data.movies %}
+            <div class="movie_card" id="bright">
+                <div class="info_section">
+                    <div class="movie_header">
+                        <img class="locandina" src="{{movie.image}}" />
+                        <h1>{{ movie.name }}</h1>
+                        <br>
+                        <p class="type">
+                            {% for genre in movie.genre %}
+                            {{ genre }}
+                            {% if loop.last == False %}
+                            ,&nbsp;
+                            {% endif %}
+                            {% endfor %}
+                        </p>
+                        <br>
+                    </div>
+                    <div class="movie_desc">
+                        <p class="text">
+                            {{movie.description}}
+                        </p>
+                    </div>
+                </div>
+                <div class="blur_back " style="background: url('{{ movie.backdrop }}')"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
